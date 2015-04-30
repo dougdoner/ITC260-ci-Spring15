@@ -55,6 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
+$route['customer'] = 'customer';
 $route['news'] = 'news';
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
