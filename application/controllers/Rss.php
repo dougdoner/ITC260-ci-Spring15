@@ -14,9 +14,7 @@ class Rss extends CI_Controller {
 	{
         //assigns xml object to data["stories"] array variable
         $data["stories"] = $this->rss_model->get_stories();
-        $this->load->view('templates/header');
         //passes data to view template
       	$this->load->view('rss/index', $data);
-        $this->load->view('templates/footer');
 	}
 }
