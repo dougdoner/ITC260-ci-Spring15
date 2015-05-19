@@ -7731,3 +7731,19 @@ input[type="color"]:focus,
 .affix {
   position: fixed;
 }
+
+.news-item img {
+    margin-right: 10px;
+}
+
+.container.news-container {
+    background: white;
+}
+
+body {
+    background-color: #DEE;
+}
+
+form {
+    padding: 10px 0;
+}

@@ -37,7 +37,9 @@ class Customer extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->config->set_item('title', 'Customers');
+
+        $this->load->model('customer_model');
+        $this->config->set_item('banner', 'Global Customer banner');
     }
 
     /**
@@ -49,7 +51,20 @@ class Customer extends CI_Controller {
      */
 	public function index()
 	{
+        $data["customer"] = $this->customer_model->get_customer();
+        //sets title for page
+        $this->config->set_item('title', 'Customers');
         //passes data to view template
-      	$this->load->view('customer/index');
+      	$this->load->view('customer/index', $data);
 	}
+
+    public function view($customer = null) {
+        if ($customer == null) {
+            show_404();
+        }
+        $data["customer"] = $this->customer_model->get_customer($customerName);
+        $this->config->set_item('title', 'Customers');
+        //passes data to view template
+      	$this->load->view('customer/index', $data);
+    }
 }
